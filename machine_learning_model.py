@@ -17,6 +17,7 @@ data = pd.concat([data_20, data_80])
 # Data Preprocessing
 # Encoding categorical variables (International plan, Voice mail plan, and Churn)
 label_encoder = LabelEncoder()
+data['State'] = label_encoder.fit_transform(data['State'])
 data['International plan'] = label_encoder.fit_transform(data['International plan'])
 data['Voice mail plan'] = label_encoder.fit_transform(data['Voice mail plan'])
 data['Churn'] = label_encoder.fit_transform(data['Churn'])
